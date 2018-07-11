@@ -76,22 +76,8 @@ type archConfig struct {
 var archConfigs = map[string]*archConfig{
 	"linux/amd64": {
 		Qemu:      "qemu-system-x86_64",
-		QemuArgs:  "-enable-kvm",
 		TargetDir: "/",
-		CmdLine: append(linuxCmdline,
-			"kvm-intel.nested=1",
-			"kvm-intel.unrestricted_guest=1",
-			"kvm-intel.vmm_exclusive=1",
-			"kvm-intel.fasteoi=1",
-			"kvm-intel.ept=1",
-			"kvm-intel.flexpriority=1",
-			"kvm-intel.vpid=1",
-			"kvm-intel.emulate_invalid_guest_state=1",
-			"kvm-intel.eptad=1",
-			"kvm-intel.enable_shadow_vmcs=1",
-			"kvm-intel.pml=1",
-			"kvm-intel.enable_apicv=1",
-		),
+		CmdLine: linuxCmdline,
 	},
 	"linux/386": {
 		Qemu:      "qemu-system-i386",
