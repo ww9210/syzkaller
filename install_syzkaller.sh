@@ -2,6 +2,6 @@
 xxx=`pwd`
 rm -rf ${GOPATH}/src/github.com/google/syzkaller
 cp -r ~/tools/syzkaller ${GOPATH}/src/github.com/google/
-cd ${GOPATH}/src/github.com/google/
+cd ${GOPATH}/src/github.com/google/syzkaller
 make
 cd ${xxx}
